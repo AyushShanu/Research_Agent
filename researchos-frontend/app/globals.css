@@ -1,4 +1,61 @@
 /* PASTE DESIGN TOKENS HERE, ABOVE THE @tailwind DIRECTIVES BELOW */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Color — named tokens, not utility guesses */
+  --abyss: #10151c;       /* page background */
+  --panel: #171f29;       /* card / node surfaces */
+  --graphite: #2a3542;    /* borders, dividers, idle node ring */
+  --text: #dce4ec;        /* primary text */
+  --text-muted: #7e8ca0;  /* secondary text, timestamps, labels */
+
+  --signal-active: #5ac8fa;      /* node currently executing */
+  --signal-verified: #f2b84b;    /* confidence / evidence-verified accent */
+  --signal-contradiction: #ff6b6b; /* conflicts, errors, low scores */
+  --signal-done: #3a4a5a;        /* completed node, quieter than active */
+
+  /* Type */
+  --font-display: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui;
+
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--abyss);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--signal-active);
+  color: var(--abyss);
+}
+
+a {
+  color: var(--signal-active);
+}
+
+.mono {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Respect reduced-motion preferences site-wide */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 @import "tailwindcss";
 
 :root {
