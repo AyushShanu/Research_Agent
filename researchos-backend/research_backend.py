@@ -416,7 +416,7 @@ def evaluate_sources_node(state: State) -> dict:
 # We want breadth, but not thousands of tokens of duplicated web text.
 
     MAX_SOURCES = 40
-    MAX_SNIPPET_CHARS = 650
+    MAX_SNIPPET_CHARS = 800
 
     compact = []
 
